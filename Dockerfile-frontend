@@ -1,0 +1,16 @@
+FROM node:20.9
+
+WORKDIR /app
+
+RUN chown -R node:node /app
+
+COPY ./frontend/package*.json ./
+
+USER node
+
+RUN npm install
+
+COPY --chown=node:node ./frontend/. .
+
+ENV HOST=0.0.0.0
+EXPOSE 3000
