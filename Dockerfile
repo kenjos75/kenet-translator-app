@@ -1,0 +1,23 @@
+FROM python:3.10.12
+
+ENV PYTHONUNBUFFERED=1 \
+    LANG=C.UTF-8 \
+    PYTHONDONTWRITEBYTECODE=1
+
+WORKDIR /app
+
+COPY ./requirements.txt .
+
+RUN apt-get update && apt-get install tesseract-ocr tesseract-ocr-jpn tesseract-ocr-kor tesseract-ocr-chi-sim tesseract-ocr-chi-tra tesseract-ocr-jpn-vert -y \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+    
+RUN pip install --no-cache-dir \
+    pytesseract \
+    googletrans
+
+COPY /backend/. .
