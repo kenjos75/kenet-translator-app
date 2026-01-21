@@ -3,11 +3,14 @@ from PIL import Image
 import pytesseract
 import os
 from googletrans import Translator
-
-from flask import Flask, render_template,request
+from flask import Flask, render_template,request, jsonify
+from flask_cors import CORS
+from api.v1 import v1_identify
 
 app = Flask(__name__)
+CORS(app)
 
+app.register_blueprint(v1_identify, url_prefix="/api/v1")
 
 @app.route("/")
 def index():
