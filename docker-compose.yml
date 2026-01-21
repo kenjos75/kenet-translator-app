@@ -7,7 +7,7 @@ services:
     stdin_open: true
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-backend
     restart: always
     volumes:
       - ./backend:/app
@@ -15,7 +15,22 @@ services:
       - ocr-network
     ports:
       - '5000:5000'
-    command: bash -c "flask --app ./app.py run --host=0.0.0.0"
+    #command: bash -c "flask --app ./app.py run --host=0.0.0.0"
+  ocr-frontend-service:
+    container_name: ocr_frontend_container
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile-frontend
+    restart: always
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - ocr-network
+    ports:
+      - '3000:3000'
 networks:
   ocr-network:
     driver: bridge
