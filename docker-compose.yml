@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  ocr-backend-service:
+    container_name: ocr_backend_container
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./backend:/app
+    networks:
+      - ocr-network
+    ports:
+      - '5000:5000'
+    command: bash -c "flask --app ./app.py run --host=0.0.0.0"
+networks:
+  ocr-network:
+    driver: bridge
