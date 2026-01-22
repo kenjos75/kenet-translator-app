@@ -36,7 +36,6 @@ def identify():
         if not text:
             return jsonify({
                 "status": "ok",
-                "result": "",
                 "message": "No text found in image"
             })
 
@@ -47,12 +46,11 @@ def identify():
 
         return jsonify({
             "status": "ok",
-            "original_text": text,
-            "translated_text": translated.text
+            "message": translated.text
         })
 
     except Exception as e:
         return jsonify({
-            "status": "error",
-            "message": str(e)
+            "status": "not ok",
+            "message": "An error occured."
         }), 500
