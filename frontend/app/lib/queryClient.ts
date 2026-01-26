@@ -1,5 +1,5 @@
+"use client"
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
-
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
@@ -37,7 +37,7 @@ export async function apiRequest<T = any>(
     const apiUrl = ensureApiPrefix(url);
     console.log(`[API] ${method} request to ${apiUrl}`, data ? { data } : '');
 
-    const res = await fetch(apiUrl, {
+    const res = await fetch(`${apiUrl}`, {
       method,
       headers: {
         "Content-Type": "application/json",
