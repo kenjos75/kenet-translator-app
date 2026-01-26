@@ -32,11 +32,11 @@ export default function IdentifyForm() {
 
     
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const [translated,setTranslated] = useState<string>('Translation appears here')
+    const [translated,setTranslated] = useState<string>('')
     
 
     const _handleIdentify = () => {
-        setTranslated('')
+        setTranslated('Translating...')
         const btn = buttonRef.current 
         btn?.click()
     }
@@ -131,7 +131,7 @@ export default function IdentifyForm() {
                 )}
               />
               <div className="flex justify-center space-x-2 w-full">
-                <div className="w-full text-wrap">
+                <div className="w-full text-wrap text-md font-mono">
                     {
                         translated
                     }
@@ -145,10 +145,11 @@ export default function IdentifyForm() {
             </form>
           </Form>
           <button
-                onClick={_handleIdentify}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 cursor-pointer"
+              disabled={mutation.isPending}
+              onClick={_handleIdentify}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-mono py-2 px-4 rounded-lg transition duration-200 cursor-pointer"
             >
-            {mutation.isPending ? 'Translating...' : 'Translate'}
+              {'Translate'}
           </button>
         </div>
     )
