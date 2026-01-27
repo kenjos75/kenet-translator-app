@@ -28,7 +28,7 @@ function ensureApiPrefix(url: string): string {
   return url;
 }
 
-export async function apiRequest<T = any>(
+export async function apiRequest<T = unknown>(
   url: string,
   method: string,
   data?: unknown | undefined,

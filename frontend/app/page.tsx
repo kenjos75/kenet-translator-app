@@ -1,5 +1,4 @@
 import IdentifyForm from "./components/identify-form";
-import DonateButton from "./components/ui/donate-button";
 
 export default function Home() {
 

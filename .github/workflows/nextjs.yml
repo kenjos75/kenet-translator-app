@@ -1,0 +1,26 @@
+name: Frontend CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      #1️ Checkout the repository
+      - uses: actions/checkout@v4
+
+      #2 Build the Docker services
+      - name: Build services
+        run: docker compose -f docker-compose.yml build
+
+      #3️ Run frontend lint inside the container
+      - name: Run frontend lint
+        run: docker compose -f docker-compose.yml run --rm ocr-frontend-service npm run lint
+
+      #4 Run frontend build inside the container
+      # Using the container's user as defined in the Dockerfile
+      - name: Run frontend build
+        run: docker compose -f docker-compose.yml run --rm ocr-frontend-service npm run build
