@@ -1,16 +1,25 @@
 FROM node:20.9
 
+# Set working directory
 WORKDIR /app
 
+# Make sure /app is owned by the node user
 RUN chown -R node:node /app
 
-COPY ./frontend/package*.json ./
-
+# Switch to node user for safety
 USER node
 
+# Copy package files and install dependencies
+COPY ./frontend/package*.json ./
 RUN npm install
 
+# Copy the rest of the frontend code, ensuring node owns it
 COPY --chown=node:node ./frontend/. .
 
+# Pre-create the .next folder and give node ownership
+RUN mkdir -p /app/.next \
+    && chown -R node:node /app/.next
+
+# Environment settings
 ENV HOST=0.0.0.0
 EXPOSE 3000
