@@ -1,0 +1,19 @@
+name: Frontend CI
+
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build services
+        run: docker compose build
+
+      - name: Run frontend lint
+        run: docker compose run --rm ocr-frontend-service npm run lint
+
+      - name: Run frontend build
+        run: docker compose run --rm ocr-frontend-service npm run build
