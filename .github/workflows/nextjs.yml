@@ -14,6 +14,9 @@ jobs:
 
       - name: Run frontend lint
         run: docker compose run --rm ocr-frontend-service npm run lint
+      
+      - name: Ensure .next directory is writable
+        run: docker compose run --rm ocr-frontend-service mkdir -p .next && chmod -R 777 .next
 
       - name: Run frontend build
         run: docker compose run --rm ocr-frontend-service npm run build
