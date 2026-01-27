@@ -5,8 +5,6 @@ export async function POST(req: Request) {
         //const body = await req.json()
         const formData = await req.formData();
 
-        const file = formData.get('file') as File;
-
         const backendRes = await fetch(
             `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1/identify`,
             {
