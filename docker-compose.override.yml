@@ -25,6 +25,7 @@ services:
       dockerfile: Dockerfile-frontend
     restart: always
     volumes:
+      - ./frontend:/app
       - /app/node_modules
     networks:
       - ocr-network
