@@ -1,8 +1,8 @@
 # Kenet Translator App
 
-Kenet Translator App will help you translate some characters that are in Korean,Japanese, and Chinese found in some images you see and translate it into english language. I personally made this because I like reading chinese, japanese, and korean news, but sometimes I read news/articles using my laptop where the article
-includes some images that has chinese/japanese/korean characters which I obviously do not understand that's why I decided to develop this simple app which also uses some already established python library particularly
-Pytesseract library. I made the app with Docker setup because I do not want to handle to installation additional packages in my operating system. By the way I am using windows sublinux system terminal.
+Kenet Translator App helps translate Korean, Japanese, and Chinese characters found in images into English. I created this app because I enjoy reading Chinese, Japanese, and Korean news, but I often browse articles on my laptop that include images with characters I don’t understand. That’s why I decided to develop this simple tool.
+
+The app uses established Python libraries, particularly Pytesseract, for text recognition. I also set it up using Docker to avoid installing additional packages directly on my operating system. For development, I use the Windows Subsystem for Linux (WSL) terminal.
 
 ## How to Use
 
@@ -42,8 +42,9 @@ CMD ["flask", "--app", "./app.py", "run", "--host", "0.0.0.0"]
 
 ## Personal Link
 
-Thank you for taking your time in visiting this repository. If you are looking for a web developer of any framework, you are free to visit my [personal website](https://kenjos75.github.io) where I listed some of my previous/current projects.
+Thanks for visiting this repository! If you're looking for a web developer, feel free to check out my [personal website](https://kenjos75.github.io) where I showcase some of my past and current projects.
+
 
 ## Questions
 
-If you have any questions about this project, you can message me at my [kenjos75@gmail.com](mailto:kenjos75@gmail.com)
+If you have any questions about this project, you can directly message me at my personal email[kenjos75@gmail.com](mailto:kenjos75@gmail.com)
