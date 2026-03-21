@@ -27,7 +27,7 @@ For backend container, when you are already inside the backend container you nee
 ```shell
 flask --app ./app.py run --host=0.0.0.0
 ```
-Or if you do not want to do any of this, just simply add the `command` and specify the appropriate command to run in the `docker-compose.override.yml` under the specific service (frontend, backend service)
+Or if you do not want to do any of this, just simply add the `CMD` and specify the appropriate command to run in the `docker-compose.override.yml` under the specific service (frontend, backend service)
 
 Or you can also add the command directly in one of the Dockerfiles at the bottom of the line. e.g. frontend
 
@@ -42,7 +42,7 @@ CMD ["flask", "--app", "./app.py", "run", "--host", "0.0.0.0"]
 
 ## Personal Link
 
-Thank you for taking your time in visiting repository. If you are looking for a web developer of any framework, you are free to visit my [personal website](https://kenjos75.github.io) where I listed some of my previous/current projects.
+Thank you for taking your time in visiting this repository. If you are looking for a web developer of any framework, you are free to visit my [personal website](https://kenjos75.github.io) where I listed some of my previous/current projects.
 
 ## Questions
 
