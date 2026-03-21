@@ -6,7 +6,7 @@ The app uses established Python libraries, particularly Pytesseract, for text re
 
 ## How to Use
 
-It is very straightforward just clone this repository and go to the root directory of this project and run the command in your terminal 
+It’s very straightforward, just clone this repository, navigate to the project’s root directory, and run the command in your terminal.
 
 ```shell
 sudo docker-compose up --build -d
