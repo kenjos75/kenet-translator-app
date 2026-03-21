@@ -1,6 +1,6 @@
 # Kenet Translator App
 
-Kenet Translator App will help you translate some characters in Korean,Japanese, and Chinese from images you see. I personally made this because I like reading chinese, japanese, and korean news, but sometimes I read news/articles using my laptop where the article
+Kenet Translator App will help you translate some characters that are in Korean,Japanese, and Chinese that are found in some images you see and translate it into english language. I personally made this because I like reading chinese, japanese, and korean news, but sometimes I read news/articles using my laptop where the article
 includes some images that has chinese/japanese/korean characters which I obviously do not understand that's why I decided to develop this simple app which also uses some already established python library particularly
 Pytesseract library. I made it with Docker setup as I do not want to add additional packages in my operating system. By the way I am using windows sublinux system terminal.
 
