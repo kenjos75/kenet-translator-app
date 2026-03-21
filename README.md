@@ -12,6 +12,33 @@ It is very straightforward just clone this repository and go to the root directo
 sudo docker-compose up --build -d
 ```
 
+After deploying containers, you need to go inside the container for backend and frontend e.g. for frontend container
+
+```shell
+sudo docker exec -it <container-id> bash
+```
+Then you have to run the development server
+
+```shell
+npm run dev
+```
+For backend container, when you are already inside the backend container you need to run:
+
+```shell
+flask --app ./app.py run --host=0.0.0.0
+```
+Or if you do not want to do any of this, just simply add the `command` and specify the appropriate command to run in the `docker-compose.override.yml` under the specific service (frontend, backend service)
+
+Or you can also add the command directly in one of the Dockerfiles at the bottom of the line. e.g. frontend
+
+```shell
+CMD ["npm", "run", "dev"]
+```
+Or for backend
+
+```shell
+CMD ["flask", "--app", "./app.py", "run", "--host", "0.0.0.0"] 
+```
 
 ## Personal Link
 
