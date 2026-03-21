@@ -46,4 +46,4 @@ Thank you for taking your time in visiting repository. If you are looking for a 
 
 ## Questions
 
-If you have any questions about this project, you can message me at my [email](kenjos75@gmail.com)
+If you have any questions about this project, you can message me at my [kenjos75@gmail.com](mailto:kenjos75@gmail.com)
