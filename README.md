@@ -47,4 +47,4 @@ Thanks for visiting this repository! If you're looking for a web developer, feel
 
 ## Questions
 
-If you have any questions about this project, you can directly message me at my personal email[kenjos75@gmail.com](mailto:kenjos75@gmail.com)
+If you have any questions about this project, you can directly message me at my personal email[kenjos75@gmail.com] (mailto:kenjos75@gmail.com)
